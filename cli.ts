@@ -61,7 +61,7 @@ async function main() {
         ...rest,
         text: `${resolvedText.slice(0, 10)}${
           resolvedText.length > 10 ? "..." : ""
-        } (${resolvedText.length} letters)`,
+        } (${resolvedText.length} chars)`,
       };
     }),
   );

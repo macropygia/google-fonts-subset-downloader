@@ -15,10 +15,14 @@
         "useImportRestrictions": "off"
       },
       "style": {
-        "useNamingConvention": "off"
+        "useNamingConvention": "off",
+        "noNamespaceImport": "off"
       },
       "suspicious": {
         "noConsoleLog": "off"
+      },
+      "correctness": {
+        "noNodejsModules": "off"
       }
     }
   },
