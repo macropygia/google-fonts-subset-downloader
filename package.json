@@ -1,0 +1,28 @@
+{
+  "name": "google-fonts-subset-downloader",
+  "version": "0.1.0",
+  "homepage": "https://macropygia.github.io/google-fonts-subset-downloader/",
+  "bugs": "https://github.com/macropygia/google-fonts-subset-downloader/discussions/new/choose",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/macropygia/google-fonts-subset-downloader"
+  },
+  "license": "MIT",
+  "author": "macropygia",
+  "type": "module",
+  "scripts": {
+    "cli": "tsx cli.ts"
+  },
+  "dependencies": {
+    "css-tree": "^2.3.1",
+    "fast-glob": "^3.3.2",
+    "inquirer": "^10.1.8",
+    "p-limit": "^6.1.0",
+    "tsx": "^4.17.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@types/bun": "latest",
+    "@types/css-tree": "^2.3.8"
+  }
+}

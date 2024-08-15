@@ -1,0 +1,39 @@
+{
+  "$schema": "schema.json",
+  "cssFile": "_font-face.scss",
+  "urlPrefix": "/assets/fonts/",
+  "chunk": [
+    {
+      "family": "Noto Sans JP",
+      "weight": 400,
+      "swap": true
+    }
+  ],
+  "subset": [
+    {
+      "family": "Barlow",
+      "weight": 500,
+      "text": "0123456789",
+      "swap": true
+    },
+    {
+      "family": "Barlow",
+      "weight": 500,
+      "italic": true,
+      "text": "0123456789",
+      "swap": true
+    },
+    {
+      "family": "Noto Serif JP",
+      "weight": 600,
+      "text": ["あいうえお", "アイウエオ"],
+      "swap": true
+    },
+    {
+      "family": "Noto Sans JP",
+      "weight": 700,
+      "text": [["あいうえお", "アイウエオ"], "東西南北"],
+      "swap": true
+    }
+  ]
+}

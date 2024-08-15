@@ -1,0 +1,116 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "outDir": {
+      "description": "ダウンロードディレクトリ（既定: downloads/<profile-name>）",
+      "type": "string",
+      "default": "downloads/<profile-name>"
+    },
+    "emptyDir": {
+      "description": "ダウンロードディレクトリを空にするかどうか",
+      "type": "boolean",
+      "default": "true"
+    },
+    "cssFile": {
+      "description": "CSSファイル名（既定: font-face.css）",
+      "type": "string",
+      "default": "font-face.css"
+    },
+    "urlPrefix": {
+      "description": "フォントを配置するパス（CSSの url() に使用）",
+      "type": "string"
+    },
+    "pattern": {
+      "description": "フォントファイルの命名パターン（[family]: ファミリー, [version]: バージョン, [weight]: ウェイト, [italic]: イタリック体識別子, [label]: チャンク名または使用文字のハッシュ, [ext]: 拡張子）",
+      "type": "string",
+      "default": "[family]-[version]-[weight][italic]-[label].[ext]"
+    },
+    "ext": {
+      "description": "拡張子（既定: woff2）",
+      "type": "string",
+      "default": "woff2"
+    },
+    "userAgent": {
+      "description": "User-Agent（既定: Win11+Chrome127）",
+      "type": "string",
+      "default": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+    },
+    "chunk": {
+      "description": "チャンク一式をダウンロードするフォントの指定",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "family": {
+            "description": "フォントファミリー（大文字と小文字を区別する）",
+            "type": "string"
+          },
+          "weight": {
+            "description": "ウェイト",
+            "type": "integer"
+          },
+          "italic": {
+            "description": "イタリック体かどうか",
+            "type": "boolean"
+          },
+          "swap": {
+            "description": "font-display: swap; を使用するかどうか",
+            "type": "boolean"
+          }
+        },
+        "required": ["family", "weight"]
+      }
+    },
+    "subset": {
+      "description": "特定の文字のみダウンロードするフォントの指定",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "family": {
+            "description": "フォントファミリー（大文字と小文字を区別する）",
+            "type": "string"
+          },
+          "weight": {
+            "description": "ウェイト",
+            "type": "integer"
+          },
+          "italic": {
+            "description": "イタリック体かどうか",
+            "type": "boolean"
+          },
+          "text": {
+            "description": "使用する文字の指定（文字列または任意の深さの文字列の配列、混在可、重複は自動で削除される）",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "swap": {
+            "description": "font-display: swap; を使用するかどうか",
+            "type": "boolean"
+          }
+        },
+        "required": ["family", "weight", "text"]
+      }
+    }
+  }
+}
